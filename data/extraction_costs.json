@@ -1,0 +1,26 @@
+[
+  {
+    "document_id": "CT-16457_TECENTRIQ_CBNPC_PIC_INS_Avis2_CT16457",
+    "tokens_in": 101195,
+    "tokens_out": 4190,
+    "cost_usd": 0.24429,
+    "model": "claude-sonnet-5",
+    "ts": "2026-09-08T06:53:19"
+  },
+  {
+    "document_id": "CT-12648_XALKORI Ins_Avis2_CT12648",
+    "tokens_in": 43805,
+    "tokens_out": 3016,
+    "cost_usd": 0.11777,
+    "model": "claude-sonnet-5",
+    "ts": "2026-09-08T06:55:01"
+  },
+  {
+    "document_id": "CT-12741_YERVOY_PIC_REEV_Avis3_CT12741",
+    "tokens_in": 53529,
+    "tokens_out": 3704,
+    "cost_usd": 0.1441,
+    "model": "claude-sonnet-5",
+    "ts": "2026-09-08T06:55:35"
+  }
+]

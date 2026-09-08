@@ -1,0 +1,238 @@
+{
+  "document_info": {
+    "titre": "TECENTRIQ 1200 mg, solution à diluer pour perfusion",
+    "type_document": "avis de la commission de la transparence",
+    "document_id": "CT-16457_TECENTRIQ_CBNPC_PIC_INS_Avis2_CT16457",
+    "source_pdf": "CT-16457_TECENTRIQ_CBNPC_PIC_INS_Avis2_CT16457.pdf"
+  },
+  "medicament": {
+    "canonical_id": "atezolizumab",
+    "nom": "TECENTRIQ",
+    "dci": "atezolizumab",
+    "fabricant": "ROCHE SAS",
+    "type_molecule": "anticorps monoclonal (anti-PD-L1)"
+  },
+  "evaluations": [
+    {
+      "pathologie": {
+        "nom": "cancer bronchique non à petites cellules (CBNPC) localement avancé ou métastatique après une chimiothérapie antérieure",
+        "icd10": "C34",
+        "categorie": "oncologie",
+        "severite": "maladie grave engageant le pronostic vital",
+        "icd10_resolu_automatiquement": true,
+        "canonical_id": "c34"
+      },
+      "population": {
+        "profil_genetique": "mutations activatrices de l'EGFR (thérapie ciblée reçue également)",
+        "sous_groupe": "patients adultes ayant reçu une chimiothérapie antérieure",
+        "gravite": "CBNPC localement avancé ou métastatique",
+        "canonical_id": "pop_665c3681b737"
+      },
+      "smr_niveau": "Important",
+      "asmr_valeur": "IV",
+      "asmr_signification": "Amélioration du service médical rendu mineure par rapport au docetaxel, compte tenu de la démonstration de supériorité sur la survie globale (gain absolu de 4,2 mois), des incertitudes sur la quantité d'effet dans le sous-groupe EGFR muté, et du caractère ouvert de l'étude ne permettant pas d'étudier la qualité de vie",
+      "date_avis": "2018-05-30",
+      "date_avis_precision": "jour",
+      "type_avis": "primo-inscription",
+      "ligne_traitement": "après échec d'une chimiothérapie antérieure (2ème ligne ou plus)",
+      "justification": "La supériorité de l'atezolizumab par rapport au docetaxel sur la survie globale a été démontrée (gain de 4,2 mois) dans la population primaire de l'étude OAK, mais des incertitudes persistent sur la quantité d'effet chez les patients EGFR mutés et le caractère ouvert de l'étude ne permet pas d'évaluer la qualité de vie.",
+      "arguments": [
+        {
+          "texte": "Démonstration de la supériorité de l'atezolizumab par rapport au docetaxel sur la survie globale avec un gain absolu de 4,2 mois dans la population primaire",
+          "categorie": "efficacite",
+          "orientation": "favorable",
+          "type_argument": "superiorite_demontree",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Superiorite demontree sur le critere principal",
+          "canonical_id": "arg_0c63c3a10e727630"
+        },
+        {
+          "texte": "Incertitudes sur la quantité d'effet dans le sous-groupe de patients présentant une mutation EGFR",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "sous_groupe_non_analysable",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Sous-groupe trop petit pour etre analyse",
+          "canonical_id": "arg_b8876d8259542044"
+        },
+        {
+          "texte": "Le caractère ouvert de l'étude ne permet pas d'étudier les données de qualité de vie",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "etude_ouverte_absence_aveugle",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Etude ouverte, absence d'aveugle",
+          "canonical_id": "arg_44218d9d8dce54f4"
+        },
+        {
+          "texte": "Le cancer bronchique non à petites cellules (CBNPC) avancé est une maladie grave qui engage le pronostic vital",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "favorable",
+          "type_argument": "maladie_grave_pronostic_vital",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Maladie grave engageant le pronostic vital",
+          "canonical_id": "arg_51f80a1fb222c01c"
+        },
+        {
+          "texte": "Il existe des alternatives médicamenteuses (nivolumab, pembrolizumab)",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "defavorable",
+          "type_argument": "alternatives_disponibles",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Alternatives therapeutiques disponibles",
+          "canonical_id": "arg_476c558acfc45118"
+        },
+        {
+          "texte": "L'incidence du taux d'anticorps dirigés contre le traitement a été de 30,4% et aucune donnée n'est disponible pour tirer des conclusions sur un possible effet des anticorps neutralisants",
+          "categorie": "securite",
+          "orientation": "defavorable",
+          "type_argument": "donnees_securite_insuffisantes",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Donnees de securite insuffisantes / recul limite",
+          "canonical_id": "arg_9dff99cd54154b0d"
+        },
+        {
+          "texte": "Les événements indésirables conduisant à l'arrêt du traitement et les événements indésirables de grades 3-4 ont été moins fréquents dans le groupe atezolizumab que dans le groupe docetaxel",
+          "categorie": "securite",
+          "orientation": "favorable",
+          "type_argument": "profil_tolerance_favorable",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Profil de tolerance favorable",
+          "canonical_id": "arg_2070e16cd6fd6c54"
+        }
+      ],
+      "comparateurs": [
+        {
+          "comparateur": {
+            "canonical_id": "docetaxel",
+            "nom": "TAXOTERE",
+            "dci": "docetaxel",
+            "type_molecule": "taxane"
+          },
+          "en_association_avec": null,
+          "role": "comparateur de l'étude pivot OAK",
+          "endpoint_principal": "survie globale (OS)",
+          "endpoint_secondaires": [
+            "survie sans progression (PFS)",
+            "taux de réponse objective (ORR)",
+            "durée de réponse (DOR)"
+          ],
+          "resultat_principal": "Médiane de survie globale : 13,8 mois (atezolizumab) vs 9,6 mois (docetaxel), HR=0,73 IC95% [0,62-0,87], p=0,0003 dans la population primaire (N=850)",
+          "resultat_secondaires": "Survie sans progression : 2,8 mois vs 4,0 mois (HR=0,95 IC95% [0,82-1,10], NS). ORR : 13,6% vs 13,4% (NS). Durée de réponse : 16,3 mois vs 6,2 mois (HR=0,31 IC95% [0,18-0,55])",
+          "evidence_excerpt": "A la date du 7 juillet 2016, avec un suivi médian d'environ 21 mois, la médiane de survie globale a été de 13,8 mois IC95% [11,8 - 15,7] dans le groupe atezolizumab versus 9,6 mois IC95% [8,6 ; 11,2] dans le groupe docetaxel, soit un gain en valeur absolue de 4,2 mois, HR=0,73 IC95% [0,62 ; 0,87] ; logrank stratifié p = 0,0003"
+        },
+        {
+          "comparateur": {
+            "canonical_id": "nivolumab",
+            "nom": "OPDIVO",
+            "dci": "nivolumab",
+            "type_molecule": "anticorps monoclonal (anti-PD-1)"
+          },
+          "en_association_avec": null,
+          "role": "alternative thérapeutique citée par la commission",
+          "endpoint_principal": null,
+          "endpoint_secondaires": [],
+          "resultat_principal": null,
+          "resultat_secondaires": null,
+          "evidence_excerpt": "TECENTRIQ, en monothérapie, représente une alternative au nivolumab ou au pembrolizumab (uniquement en cas de tumeur avec surexpression PD-L1 ≥ 1%) chez les patients ayant un CBNPC localement avancé ou métastatique"
+        },
+        {
+          "comparateur": {
+            "canonical_id": "pembrolizumab",
+            "nom": "KEYTRUDA",
+            "dci": "pembrolizumab",
+            "type_molecule": "anticorps monoclonal (anti-PD-1)"
+          },
+          "en_association_avec": null,
+          "role": "alternative thérapeutique citée par la commission (uniquement en cas de tumeur avec surexpression PD-L1 ≥ 1%)",
+          "endpoint_principal": null,
+          "endpoint_secondaires": [],
+          "resultat_principal": null,
+          "resultat_secondaires": null,
+          "evidence_excerpt": "En l'absence de donnée comparative, la place de TECENTRIQ vis-à-vis du nivolumab ou du pembrolizumab n'est pas connue."
+        }
+      ],
+      "canonical_id": "eval_05e4e76664c2"
+    },
+    {
+      "pathologie": {
+        "nom": "cancer bronchique non à petites cellules (CBNPC) localement avancé ou métastatique avec réarrangement du gène ALK (ALK+) après une chimiothérapie antérieure",
+        "icd10": "C34",
+        "categorie": "oncologie",
+        "severite": "maladie grave engageant le pronostic vital",
+        "icd10_resolu_automatiquement": true,
+        "canonical_id": "c34"
+      },
+      "population": {
+        "profil_genetique": "réarrangement du gène ALK (ALK-positif)",
+        "sous_groupe": "patients adultes ayant reçu une chimiothérapie antérieure et une thérapie ciblée",
+        "gravite": "CBNPC localement avancé ou métastatique",
+        "canonical_id": "pop_07ab5b47eac2"
+      },
+      "smr_niveau": "Insuffisant",
+      "asmr_valeur": "NA",
+      "asmr_signification": "Sans objet, le SMR étant jugé insuffisant faute de donnée clinique disponible",
+      "date_avis": "2018-05-30",
+      "date_avis_precision": "jour",
+      "type_avis": "primo-inscription",
+      "ligne_traitement": "après échec d'une chimiothérapie antérieure et de thérapies ciblées appropriées",
+      "justification": "Le rapport efficacité/effets indésirables n'est pas établi faute de donnée clinique, seuls 2 patients ALK+ ayant été inclus dans l'étude pivot ; l'atezolizumab n'a pas démontré de place dans la stratégie thérapeutique de cette sous-population.",
+      "arguments": [
+        {
+          "texte": "Seuls 2 patients avec mutation ALK+ ont été inclus dans l'étude pivot (dans le groupe atezolizumab), aucune analyse en sous-groupe n'est disponible",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "sous_groupe_non_analysable",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Sous-groupe trop petit pour etre analyse",
+          "canonical_id": "arg_b8876d8259542044"
+        },
+        {
+          "texte": "Le rapport efficacité/effets indésirables n'est pas établi faute de donnée clinique",
+          "categorie": "efficacite",
+          "orientation": "defavorable",
+          "type_argument": "absence_benefice_demontre",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence de benefice clinique demontre",
+          "canonical_id": "arg_954fb530e49f1688"
+        },
+        {
+          "texte": "Intégration récente dans la stratégie thérapeutique de plusieurs ITK ayant démontré leur efficacité spécifiquement chez des patients ayant des tumeurs ALK+, en première et en deuxième ligne de traitement",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "defavorable",
+          "type_argument": "alternatives_disponibles",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Alternatives therapeutiques disponibles",
+          "canonical_id": "arg_476c558acfc45118"
+        },
+        {
+          "texte": "Le cancer bronchique non à petites cellules (CBNPC) avancé est une maladie grave qui engage le pronostic vital",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "favorable",
+          "type_argument": "maladie_grave_pronostic_vital",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Maladie grave engageant le pronostic vital",
+          "canonical_id": "arg_51f80a1fb222c01c"
+        }
+      ],
+      "comparateurs": [
+        {
+          "comparateur": {
+            "canonical_id": "docetaxel",
+            "nom": "TAXOTERE",
+            "dci": "docetaxel",
+            "type_molecule": "taxane"
+          },
+          "en_association_avec": null,
+          "role": "comparateur de l'étude pivot OAK (population générale, non spécifique ALK+)",
+          "endpoint_principal": "survie globale (OS)",
+          "endpoint_secondaires": [],
+          "resultat_principal": null,
+          "resultat_secondaires": "Dans la mesure où seuls 2 patients avec mutation ALK+ ont été inclus (dans le groupe atezolizumab), aucune analyse en sous-groupe n'est disponible en fonction de cette mutation",
+          "evidence_excerpt": "Dans la mesure où seuls 2 patients avec mutation ALK+ ont été inclus (dans le groupe atezolizumab), aucune analyse en sous-groupe n'est disponible en fonction de cette mutation."
+        }
+      ],
+      "canonical_id": "eval_69fec55735c6"
+    }
+  ]
+}

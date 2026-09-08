@@ -1,0 +1,38 @@
+[
+  {
+    "nom": "granulomatose avec polyangéite (GPA) (maladie de Wegener) et polyangéite microscopique (PAM) sévères et actives",
+    "documents": [
+      "CT-13904_MABTHERA_PIC_EI_vascularite_Avis2_CT13904"
+    ]
+  },
+  {
+    "nom": "syndromes myélodysplasiques/myéloprolifératifs (SMD/SMP) associés à des réarrangements du gène du PDGFR",
+    "documents": [
+      "CT-18123_GLIVEC_PIS_INS_Avis2_CT18123"
+    ]
+  },
+  {
+    "nom": "syndrome hyperéosinophilique (SHE) à un stade avancé et/ou leucémie chronique à éosinophiles (LCE) associés à un réarrangement du FIP1L1-PDGFRα",
+    "documents": [
+      "CT-18123_GLIVEC_PIS_INS_Avis2_CT18123"
+    ]
+  },
+  {
+    "nom": "tumeurs stromales gastro-intestinales (GIST) malignes Kit (CD117) positives non résécables et/ou métastatiques",
+    "documents": [
+      "CT-18123_GLIVEC_PIS_INS_Avis2_CT18123"
+    ]
+  },
+  {
+    "nom": "traitement adjuvant après résection d'une tumeur stromale gastro-intestinale GIST Kit (CD117) positive à risque significatif de rechute",
+    "documents": [
+      "CT-18123_GLIVEC_PIS_INS_Avis2_CT18123"
+    ]
+  },
+  {
+    "nom": "dermatofibrosarcome protuberans (DFSP ou maladie de Darier-Ferrand) non résécable et en rechute et/ou métastatique ne relevant pas d'un traitement chirurgical",
+    "documents": [
+      "CT-18123_GLIVEC_PIS_INS_Avis2_CT18123"
+    ]
+  }
+]

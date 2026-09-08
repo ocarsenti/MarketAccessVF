@@ -1,0 +1,23 @@
+version: '3.8'
+
+# Instance Neo4j dediee a MarketAccessVF, isolee du conteneur has_neo4j du
+# projet has-market-access (autres ports, autre volume, autre schema).
+services:
+  neo4j:
+    image: neo4j:5.18-community
+    container_name: marketaccessvf_neo4j
+    ports:
+      - "7475:7474"
+      - "7688:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/changeme123
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+    volumes:
+      - marketaccessvf_neo4j_data:/data
+      - marketaccessvf_neo4j_logs:/logs
+    restart: unless-stopped
+
+volumes:
+  marketaccessvf_neo4j_data:
+  marketaccessvf_neo4j_logs:

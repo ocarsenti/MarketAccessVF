@@ -1,0 +1,189 @@
+{
+  "document_info": {
+    "titre": "XALKORI 200 mg, gélule / XALKORI 250 mg, gélule",
+    "type_document": "avis de la commission de la transparence",
+    "document_id": "CT-12648_XALKORI Ins_Avis2_CT12648",
+    "source_pdf": "CT-12648_XALKORI Ins_Avis2_CT12648.pdf"
+  },
+  "medicament": {
+    "canonical_id": "crizotinib",
+    "nom": "XALKORI",
+    "dci": "crizotinib",
+    "fabricant": "PFIZER",
+    "type_molecule": "inhibiteur de tyrosine kinase"
+  },
+  "evaluations": [
+    {
+      "pathologie": {
+        "nom": "cancer du poumon non à petites cellules (CPNPC) anaplastic lymphoma kinase (ALK) positif et avancé",
+        "icd10": "C34",
+        "categorie": "oncologie",
+        "severite": "affection grave qui engage le pronostic vital",
+        "icd10_resolu_automatiquement": true,
+        "canonical_id": "c34"
+      },
+      "population": {
+        "profil_genetique": "ALK positif",
+        "sous_groupe": "patients adultes ayant reçu au moins un traitement antérieur",
+        "gravite": "stade avancé",
+        "canonical_id": "pop_46dc845e0b10"
+      },
+      "smr_niveau": "Important",
+      "asmr_valeur": "III",
+      "asmr_signification": "XALKORI apporte une amélioration du service médical rendu modérée (niveau III) dans la stratégie de prise en charge du cancer bronchique non à petites cellules ALK+ au stade avancé en deuxième ligne et par rapport au docétaxel ou au pemetrexed.",
+      "date_avis": "2013-04-03",
+      "date_avis_precision": "jour",
+      "type_avis": "primo-inscription",
+      "ligne_traitement": "deuxième ligne, après échec d'un traitement antérieur",
+      "justification": "Le cancer bronchique non à petites cellules ALK+ avancé est une affection grave sans alternative ciblant spécifiquement la mutation ALK. L'étude de phase III versus chimiothérapie montre un gain de 4,7 mois de survie sans progression et une amélioration de la réponse objective, sans différence de survie globale, justifiant un SMR important et une ASMR modérée (III).",
+      "arguments": [
+        {
+          "texte": "Le cancer bronchique non à petites cellules (CBNPC) est une affection grave qui engage le pronostic vital",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "favorable",
+          "type_argument": "maladie_grave_pronostic_vital",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Maladie grave engageant le pronostic vital",
+          "canonical_id": "arg_51f80a1fb222c01c"
+        },
+        {
+          "texte": "Il n'existe pas de comparateur médicamenteux disposant d'une AMM spécifique au traitement du cancer bronchique avec mutation ALK+",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "favorable",
+          "type_argument": "absence_alternative_therapeutique",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence d'alternative therapeutique",
+          "canonical_id": "arg_7a9d6b7e4fcbcc7c"
+        },
+        {
+          "texte": "Un essai versus chimiothérapie par docétaxel ou pemetrexed montre un gain absolu de 4,7 mois sur la survie sans progression en faveur de XALKORI (HR = 0,49 IC95% [0,37-0,64] ; p<0,0001)",
+          "categorie": "efficacite",
+          "orientation": "favorable",
+          "type_argument": "superiorite_demontree",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Superiorite demontree sur le critere principal",
+          "canonical_id": "arg_0c63c3a10e727630"
+        },
+        {
+          "texte": "Amélioration significative du pourcentage de réponse objective : 65,3% versus 19,5% (HR=3,4 IC95% [2,5-4,7], p<0,0001)",
+          "categorie": "efficacite",
+          "orientation": "favorable",
+          "type_argument": "superiorite_demontree",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Superiorite demontree sur le critere principal",
+          "canonical_id": "arg_0c63c3a10e727630"
+        },
+        {
+          "texte": "Absence de différence en termes de survie globale entre crizotinib et chimiothérapie (HR=1,02 IC95% [0,68-1,54] ; p=0,539)",
+          "categorie": "efficacite",
+          "orientation": "defavorable",
+          "type_argument": "absence_benefice_demontre",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence de benefice clinique demontre",
+          "canonical_id": "arg_954fb530e49f1688"
+        },
+        {
+          "texte": "Il s'agit d'une étude ouverte, les résultats de l'analyse de qualité de vie doivent être interprétés avec prudence",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "etude_ouverte_absence_aveugle",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Etude ouverte, absence d'aveugle",
+          "canonical_id": "arg_44218d9d8dce54f4"
+        },
+        {
+          "texte": "L'analyse de survie globale correspond à une analyse intermédiaire, la médiane de survie globale n'a pu être évaluée dans les études non comparatives",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "donnees_immatures",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Donnees de survie/efficacite immatures",
+          "canonical_id": "arg_d894502a649f3c13"
+        },
+        {
+          "texte": "Les principaux événements indésirables de grade 3 ou 4 plus fréquents sous crizotinib incluent élévation des transaminases (15,7% vs 2,3%) et embolie pulmonaire (5,2% vs 1,7%)",
+          "categorie": "securite",
+          "orientation": "defavorable",
+          "type_argument": "profil_tolerance_defavorable",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Profil de tolerance defavorable",
+          "canonical_id": "arg_e97fe69535b1ef5a"
+        },
+        {
+          "texte": "Il existe une alternative médicamenteuse représentée par la chimiothérapie classique sans ciblage de la mutation ALK+",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "defavorable",
+          "type_argument": "alternatives_disponibles",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Alternatives therapeutiques disponibles",
+          "canonical_id": "arg_476c558acfc45118"
+        },
+        {
+          "texte": "D'un point de vue populationnel, il n'est pas attendu d'intérêt de santé publique pour la spécialité XALKORI dans cette indication",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "defavorable",
+          "type_argument": "besoin_deja_couvert",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Besoin medical deja couvert par les alternatives existantes",
+          "canonical_id": "arg_5119e43e4a1b0588"
+        }
+      ],
+      "comparateurs": [
+        {
+          "comparateur": {
+            "canonical_id": "docetaxel",
+            "nom": "TAXOTERE",
+            "dci": "docétaxel",
+            "type_molecule": "cytotoxique"
+          },
+          "en_association_avec": null,
+          "role": "comparateur de l'étude pivot (étude 1007)",
+          "endpoint_principal": "survie sans progression (PFS)",
+          "endpoint_secondaires": [
+            "réponse objective (ORR)",
+            "survie globale (OS)",
+            "qualité de vie"
+          ],
+          "resultat_principal": "PFS médiane sous-groupe docetaxel : 2,6 mois vs 7,7 mois sous crizotinib",
+          "resultat_secondaires": "Réponse objective sous-groupe docetaxel : 6,9% (IC95% 2%-16%) vs 65,3% sous crizotinib",
+          "evidence_excerpt": "La survie sans progression médiane a été de 7,7 mois dans le groupe crizotinib versus 4,2 mois dans le sous groupe pemetrexed et 2,6 mois dans le sous groupe docetaxel."
+        },
+        {
+          "comparateur": {
+            "canonical_id": "pemetrexed",
+            "nom": "ALIMTA",
+            "dci": "pemetrexed",
+            "type_molecule": "cytotoxique"
+          },
+          "en_association_avec": null,
+          "role": "comparateur de l'étude pivot (étude 1007)",
+          "endpoint_principal": "survie sans progression (PFS)",
+          "endpoint_secondaires": [
+            "réponse objective (ORR)",
+            "survie globale (OS)",
+            "qualité de vie"
+          ],
+          "resultat_principal": "PFS médiane sous-groupe pemetrexed : 4,2 mois vs 7,7 mois sous crizotinib",
+          "resultat_secondaires": "Réponse objective sous-groupe pemetrexed : 29,3% (IC95% 21%-39%) vs 65,3% sous crizotinib",
+          "evidence_excerpt": "Le pourcentage de réponse objective chez les patients du sous groupe pemetrexed a été de 29,3% (IC95% : 21%, 39%) (p<0,0001 vs crizotinib)."
+        },
+        {
+          "comparateur": {
+            "canonical_id": "erlotinib",
+            "nom": "TARCEVA",
+            "dci": "erlotinib",
+            "type_molecule": "thérapie ciblée"
+          },
+          "en_association_avec": null,
+          "role": "alternative thérapeutique citée par la commission",
+          "endpoint_principal": null,
+          "endpoint_secondaires": [],
+          "resultat_principal": null,
+          "resultat_secondaires": null,
+          "evidence_excerpt": "TARCEVA (erlotinib), thérapie ciblée, indiqué dans le traitement des formes localement avancées ou métastatiques du cancer bronchique non à petites cellules (CBNPC) après échec d'au moins une ligne de chimiothérapie."
+        }
+      ],
+      "canonical_id": "eval_27ff5d7c6c7c"
+    }
+  ]
+}
