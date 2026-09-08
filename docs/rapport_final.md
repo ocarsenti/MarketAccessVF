@@ -198,7 +198,48 @@ ajouter à `utils/pathologies.py::PATHOLOGIES_ICD10` avant de relancer
 l'extraction sur Glivec/Mabthera — conservées ici pour ne pas perdre le
 travail de détection déjà fait.
 
-## 6. Choix d'infrastructure
+## 7. Requêtes métier testées post-livraison
+
+En plus des 3 requêtes de validation du schéma (§4), 3 requêtes représentatives
+des cas d'usage réels visés par l'outil ont été testées sur le corpus à 3
+documents — script `cypher/exemples_metier.py`.
+
+**Q1 — avant de rédiger l'argumentaire** ("anti-PD1 2e ligne poumon métastatique
+vs chimio, ASMR ≤ III") : filtrée littéralement sur le mécanisme d'action, la
+requête ne retourne rien — le seul anti-PD-L1 du corpus (Tecentriq) plafonne à
+ASMR IV ou est rejeté. Élargie sans contrainte de mécanisme, elle montre
+pourquoi : le seul précédent à ASMR III sur ce périmètre clinique est Xalkori
+(crizotinib, un ITK, pas un anti-PD1), avec les arguments `superiorite_demontree`,
+`maladie_grave_pronostic_vital`, `absence_alternative_therapeutique` tracés
+jusqu'au dossier `CT-12648`. Résultat honnête et exploitable plutôt qu'un faux
+négatif silencieux.
+
+**Q2 — anticiper les points faibles** (arguments défavorables les plus
+fréquents vs comparateur chimiothérapie) : `etude_ouverte_absence_aveugle`
+(fréq. 5, 3 dossiers), puis `alternatives_disponibles` / `donnees_immatures` /
+`profil_tolerance_defavorable` (fréq. 4 chacun).
+
+**Q3 — précédent le plus proche** (même profil de population + même
+pathologie) : un match trouvé, Tecentriq (sous-groupe ALK+, rejeté — SMR
+Insuffisant, 2 patients ALK+ dans l'étude pivot) vs Xalkori (SMR Important,
+ASMR III, étude dédiée à cette population) — exactement le type de
+comparaison utile pour anticiper l'issue d'un dépôt sur un sous-groupe.
+
+**Bug trouvé et corrigé pendant ce test** : `resolve_type_argument()`
+tolérait qu'un `type_argument` soit validé sous une catégorie différente de
+celle assignée par le LLM (ex. code vivant sous `methodologie` mais LLM
+ayant proposé `categorie: "efficacite"`) sans corriger la catégorie
+retournée. Conséquence observée sur le corpus : l'argument
+`donnees_immatures` se scindait en 2 nœuds distincts (un par catégorie),
+et celui à catégorie incohérente affichait un libellé générique "autre" au
+lieu du vrai libellé. Fix : la catégorie retournée est désormais celle où
+le code vit réellement dans la taxonomie (le code fait autorité, pas la
+catégorie proposée par le LLM) — l'argument fusionne correctement en un
+seul nœud (fréquence 4 sur ce corpus au lieu de 2+2 incohérents). Les 3
+documents concernés ont été retraités sans nouvel appel API (la réponse
+LLM brute était déjà sauvegardée) puis rechargés dans Neo4j.
+
+## 8. Choix d'infrastructure
 
 - **Nouveau repo GitHub public dédié** (`MarketAccessVF`) plutôt qu'un
   sous-dossier `has_graph/` dans `has-market-access` : ce dernier a un

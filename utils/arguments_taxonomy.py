@@ -71,26 +71,35 @@ def taxonomie_prompt_text() -> str:
 
 
 def resolve_type_argument(categorie: str | None, type_argument: str | None,
-                           texte: str | None, document_id: str | None = None) -> tuple[str, bool]:
+                           texte: str | None, document_id: str | None = None) -> tuple[str, str, bool]:
     """Valide type_argument contre la taxonomie fermee.
 
-    Retourne (type_argument_valide, matched). Si non reconnu (hallucination,
-    typo, ou "autre" explicite du LLM), retourne ("autre", False) et logge
-    l'occurrence pour extension manuelle de la taxonomie.
+    Retourne (categorie_corrigee, type_argument_valide, matched). Chaque code
+    type_argument n'appartient qu'a une seule categorie dans TAXONOMIE : si le
+    LLM classe l'argument sous une categorie differente de celle ou vit
+    reellement ce code (erreur de classification frequente entre "efficacite"
+    et "methodologie" par ex.), on fait AUTORITE sur le code et on corrige la
+    categorie en consequence -- plutot que de garder la categorie du LLM et de
+    perdre le libelle (bug observe : ca produisait un label generique "autre"
+    incoherent avec un type_argument par ailleurs valide).
+
+    Si non reconnu du tout (hallucination, typo, ou "autre" explicite du LLM),
+    retourne (categorie, "autre", False) et logge l'occurrence pour extension
+    manuelle de la taxonomie.
     """
     categorie = categorie or "autre"
     valid_for_cat = TAXONOMIE.get(categorie, {})
 
     if type_argument and type_argument in valid_for_cat:
-        return type_argument, True
+        return categorie, type_argument, True
 
-    # tolere une classification dans une autre categorie que celle indiquee
-    for cat_types in TAXONOMIE.values():
+    # le code existe mais sous une autre categorie que celle indiquee par le LLM
+    for cat, cat_types in TAXONOMIE.items():
         if type_argument and type_argument in cat_types:
-            return type_argument, True
+            return cat, type_argument, True
 
     _log_unknown(categorie, type_argument, texte, document_id)
-    return "autre", False
+    return categorie, "autre", False
 
 
 def label_for(categorie: str, type_argument: str) -> str:

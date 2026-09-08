@@ -211,10 +211,11 @@ def _postprocess(data: dict, document_id: str) -> dict:
             med_id, path["canonical_id"], pop_id, document_id, ev.get("date_avis"))
 
         for arg in ev.get("arguments", []):
-            categorie = arg.get("categorie") or "autre"
             orientation = arg.get("orientation") or "favorable"
-            type_argument, matched = resolve_type_argument(
-                categorie, arg.get("type_argument"), arg.get("texte"), document_id=document_id)
+            categorie, type_argument, matched = resolve_type_argument(
+                arg.get("categorie") or "autre", arg.get("type_argument"),
+                arg.get("texte"), document_id=document_id)
+            arg["categorie"] = categorie
             arg["type_argument"] = type_argument
             arg["type_argument_resolu_automatiquement"] = matched
             arg["label"] = label_for(categorie, type_argument)

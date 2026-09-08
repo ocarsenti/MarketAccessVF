@@ -56,6 +56,7 @@ utils/ids.py                 # canonical_id déterministes (Evaluation/Populatio
 cypher/json_to_cypher.py     # JSON -> Cypher MERGE + calcul SUCCEDE_A
 cypher/load_neo4j.py         # charge les .cypher dans Neo4j
 cypher/validation_queries.py # les 3 requêtes de validation du schéma
+cypher/exemples_metier.py    # 3 requêtes représentatives des cas d'usage réels (voir rapport §7)
 data/pdf/                    # corpus de test (18 avis)
 data/json/                   # sorties d'extraction
 data/cypher/                 # Cypher généré
