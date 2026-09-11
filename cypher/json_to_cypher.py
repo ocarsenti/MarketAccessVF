@@ -78,12 +78,19 @@ def convert_json(data: dict) -> list[str]:
             "justification": ev.get("justification"),
             "document_id": doc["document_id"],
             "titre": doc.get("titre"),
+            "population_cible_min": ev.get("population_cible_min"),
+            "population_cible_max": ev.get("population_cible_max"),
+            "population_cible_texte_brut": ev.get("population_cible_texte_brut"),
+            "population_cible_source_type": ev.get("population_cible_source_type"),
+            "population_cible_commentaire_commission": ev.get("population_cible_commentaire_commission"),
         }
         stmts.append(_merge_node(
             "Evaluation", "canonical_id", ev["canonical_id"], eval_props,
             ["smr_niveau", "asmr_valeur", "asmr_signification", "date_avis",
              "date_avis_precision", "type_avis", "ligne_traitement", "justification",
-             "document_id", "titre"]))
+             "document_id", "titre", "population_cible_min", "population_cible_max",
+             "population_cible_texte_brut", "population_cible_source_type",
+             "population_cible_commentaire_commission"]))
 
         stmts.append(
             f"MATCH (e:Evaluation {{canonical_id: {_esc(ev['canonical_id'])}}}), "
@@ -100,6 +107,29 @@ def convert_json(data: dict) -> list[str]:
                 f"MATCH (e:Evaluation {{canonical_id: {_esc(ev['canonical_id'])}}}), "
                 f"(pp:Population {{canonical_id: {_esc(pop['canonical_id'])}}}) "
                 f"MERGE (e)-[:SUR_POPULATION]->(pp);"
+            )
+
+        for ref in ev.get("avis_references", []):
+            # noeud Evaluation "placeholder", identifie uniquement par (medicament, annee)
+            # -- voir utils/avis_references.py. Cree si l'avis cite n'est pas encore dans
+            # le graphe ; a reconcilier manuellement plus tard avec la vraie Evaluation une
+            # fois celle-ci extraite (voir data/avis_references_a_verifier.json).
+            if not ref.get("canonical_id"):
+                continue
+            placeholder_props = {
+                "canonical_id": ref["canonical_id"],
+                "est_placeholder": True,
+                "medicament_nom_reference": ref.get("medicament_nom"),
+                "annee_reference": ref.get("annee"),
+            }
+            stmts.append(_merge_node(
+                "Evaluation", "canonical_id", ref["canonical_id"], placeholder_props,
+                ["est_placeholder", "medicament_nom_reference", "annee_reference"]))
+            appuie_props = _props(ref, ["contexte"])
+            stmts.append(
+                f"MATCH (e:Evaluation {{canonical_id: {_esc(ev['canonical_id'])}}}), "
+                f"(r:Evaluation {{canonical_id: {_esc(ref['canonical_id'])}}}) "
+                f"MERGE (e)-[rel:S_APPUIE_SUR]->(r) SET rel += {{{appuie_props}}};"
             )
 
         for arg in ev.get("arguments", []):

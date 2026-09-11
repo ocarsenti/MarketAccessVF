@@ -28,6 +28,7 @@ from utils.ids import (
 )
 from utils.pathologies import pathologie_canonical_id, resolve_icd10
 from utils.arguments_taxonomy import resolve_type_argument, label_for, taxonomie_prompt_text
+from utils.avis_references import log_reference
 
 load_dotenv(override=True)
 
@@ -67,6 +68,7 @@ VALEURS AUTORISEES :
   "acces-precoce" / "refus-acces-precoce" / "nouvel-examen" / "non-sollicite" / "reevaluation-commission"
 - categorie (Argument) : "methodologie" / "efficacite" / "securite" / "besoin_medical_non_couvert" / "autre"
 - orientation (Argument) : "favorable" / "defavorable"
+- population_cible_source_type : "etude_externe" / "avis_has_anterieur" / "les_deux" / "non_precise" / null
 
 CANONICAL_ID (medicament, comparateur) : convention stricte, minuscules, underscores,
 sans accents, sans espaces, DCI de preference. Ex: "pembrolizumab", "bevacizumab".
@@ -81,6 +83,28 @@ aucun type ne correspond. Ne fusionne jamais plusieurs arguments distincts dans 
 
 TAXONOMIE FERMEE (categorie -> type_argument) :
 """ + taxonomie_prompt_text() + """
+
+POPULATION CIBLE :
+- N'invente JAMAIS un chiffre de population cible si la section est absente du document --
+  laisse tous les champs "population_cible_*" a null. Cette section n'est pas systematique
+  (ex : absente sur les avis d'acces precoce post-AMM).
+- Si le chiffre est une valeur unique (pas de fourchette), mets la meme valeur dans
+  "population_cible_min" et "population_cible_max".
+- Si le CALCUL DE LA POPULATION CIBLE cite explicitement un ou plusieurs AUTRES avis de la
+  Commission de la Transparence comme source (recherche des formules du type "Avis de la
+  Commission de la Transparence. [NOM]. [ANNEE]." en note de bas de page ou dans le corps du
+  texte de la section Population cible), extrais ces references precisement dans
+  "avis_references" (nom du medicament tel qu'ecrit, annee si mentionnee, et le contexte --
+  pourquoi cet avis est cite pour le calcul).
+- "avis_references" est STRICTEMENT reserve aux avis HAS cites comme source du calcul de
+  population cible. Le document peut citer d'autres avis HAS ailleurs, hors de cette section
+  (ex: comparaison d'arguments methodologiques ou de SMR avec un autre produit) -- ceux-la NE
+  VONT PAS dans "avis_references". Si "population_cible_texte_brut" est null (section
+  absente), "avis_references" doit rester [].
+- Remplis "population_cible_commentaire_commission" UNIQUEMENT si la Commission exprime un
+  vrai doute, une reserve, ou une nuance critique explicite sur son PROPRE chiffre (ex :
+  "probablement sous-estime", justification clinique donnee par la Commission elle-meme).
+  Ne remplis JAMAIS ce champ avec un expose neutre/descriptif du calcul.
 """
 
 _STRUCTURE = """
@@ -118,6 +142,18 @@ STRUCTURE JSON ATTENDUE :
       "type_avis": "primo-inscription / renouvellement / ...",
       "ligne_traitement": "ex: premiere ligne, apres echec d'au moins une ligne anterieure ; null si non mentionne",
       "justification": "resume court (1-3 phrases) des motifs generaux de la conclusion de la commission",
+      "population_cible_min": "nombre (borne basse si fourchette, sinon = valeur unique) ; null si section absente",
+      "population_cible_max": "nombre (borne haute si fourchette, sinon = valeur unique) ; null si section absente",
+      "population_cible_texte_brut": "paragraphe complet de la section Population cible, verbatim ; null si absente",
+      "population_cible_source_type": "etude_externe / avis_has_anterieur / les_deux / non_precise ; null si absente",
+      "population_cible_commentaire_commission": "UNIQUEMENT si la commission exprime un doute/une reserve explicite sur son propre chiffre, sinon null",
+      "avis_references": [
+        {
+          "medicament_nom": "nom du medicament de l'avis HAS cite en reference, tel qu'ecrit",
+          "annee": "annee de l'avis cite si mentionnee, sinon null",
+          "contexte": "pourquoi cet avis est cite (ex: donnees de switch therapeutique reprises pour estimer la sous-population en echec de bitherapie)"
+        }
+      ],
       "arguments": [
         {
           "texte": "argument court, une phrase, verbatim ou tres proche du PDF",
@@ -210,6 +246,12 @@ def _postprocess(data: dict, document_id: str) -> dict:
         ev["canonical_id"] = evaluation_canonical_id(
             med_id, path["canonical_id"], pop_id, document_id, ev.get("date_avis"))
 
+        for ref in ev.get("avis_references", []):
+            if not ref.get("medicament_nom"):
+                continue
+            ref["canonical_id"] = log_reference(
+                ref["medicament_nom"], ref.get("annee"), ref.get("contexte"), document_id)
+
         for arg in ev.get("arguments", []):
             orientation = arg.get("orientation") or "favorable"
             categorie, type_argument, matched = resolve_type_argument(
@@ -251,9 +293,9 @@ def extract_from_pdf(pdf_path: str, output_dir: str = "data/json") -> str:
 
     for attempt in range(5):
         try:
-            msg = client.messages.create(
+            with client.messages.stream(
                 model=MODEL,
-                max_tokens=8000,
+                max_tokens=32000,
                 messages=[{
                     "role": "user",
                     "content": [
@@ -262,7 +304,8 @@ def extract_from_pdf(pdf_path: str, output_dir: str = "data/json") -> str:
                         {"type": "text", "text": prompt},
                     ],
                 }],
-            )
+            ) as stream:
+                msg = stream.get_final_message()
             break
         except anthropic.RateLimitError:
             wait = 30 * (2 ** attempt)
@@ -270,6 +313,12 @@ def extract_from_pdf(pdf_path: str, output_dir: str = "data/json") -> str:
             time.sleep(wait)
             if attempt == 4:
                 raise
+
+    if msg.stop_reason == "max_tokens":
+        raise RuntimeError(
+            f"Reponse tronquee (stop_reason=max_tokens, {msg.usage.output_tokens} tokens de sortie) "
+            f"-- avis trop long/complexe pour la limite actuelle, augmenter max_tokens plutot que de "
+            f"retenter (le JSON partiel n'est pas exploitable et les tokens deja generes sont factures).")
 
     text_blocks = [b.text for b in msg.content if b.type == "text"]
     if not text_blocks:

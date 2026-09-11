@@ -1,0 +1,289 @@
+{
+  "document_info": {
+    "titre": "MOUNJARO 2,5 mg, 5 mg, 7,5 mg, 10 mg, 12,5 mg et 15 mg, solution injectable en stylo pré-rempli - Primo-inscription",
+    "type_document": "avis de la commission de la transparence",
+    "document_id": "CT-20759_MOUNJARO_DT2_PIC_INS_AvisDef_CT20759",
+    "source_pdf": "CT-20759_MOUNJARO_DT2_PIC_INS_AvisDef_CT20759.pdf"
+  },
+  "medicament": {
+    "canonical_id": "tirzepatide",
+    "nom": "MOUNJARO",
+    "dci": "tirzépatide",
+    "fabricant": "LILLY FRANCE",
+    "type_molecule": "agoniste des récepteurs du GIP et du GLP-1"
+  },
+  "evaluations": [
+    {
+      "pathologie": {
+        "nom": "Diabète de type 2 insuffisamment contrôlé en complément d'un régime alimentaire et d'une activité physique, en bithérapie avec la metformine, en trithérapie avec la metformine et un sulfamide hypoglycémiant, ou en trithérapie avec la metformine et une insuline basale",
+        "icd10": "E11",
+        "categorie": "endocrinologie/diabétologie",
+        "severite": "Maladie chronique aux complications potentiellement graves, notamment cardiovasculaires (micro et macroangiopathies)",
+        "icd10_resolu_automatiquement": true,
+        "canonical_id": "e11"
+      },
+      "population": {
+        "profil_genetique": null,
+        "sous_groupe": "Adultes en 2ème ou 3ème ligne de traitement médicamenteux, si écart à l'objectif > 1% d'HbA1c et IMC ≥ 30 kg/m² ou si la prise de poids sous insuline ou la survenue d'hypoglycémies sont préoccupants, insuffisamment contrôlés par monothérapie par metformine ou bithérapie",
+        "gravite": null,
+        "canonical_id": "pop_5e20bce06ee3"
+      },
+      "smr_niveau": "Modere",
+      "asmr_valeur": "V",
+      "asmr_signification": "Pas de progrès dans la prise en charge ; efficacité démontrée sur un critère biologique intermédiaire (HbA1c) et sur la perte de poids par rapport à des comparateurs actifs, mais absence de démonstration d'un bénéfice sur la morbi-mortalité cardiovasculaire ou rénale, avec des incertitudes sur la tolérance à long terme",
+      "date_avis": "2024-07-17",
+      "date_avis_precision": "jour",
+      "type_avis": "primo-inscription",
+      "ligne_traitement": "2ème ou 3ème ligne de traitement médicamenteux",
+      "justification": "MOUNJARO a démontré une supériorité par rapport à des comparateurs actifs (sémaglutide, insuline dégludec, insuline glargine, insuline lispro) sur la variation d'HbA1c et la perte de poids, mais sans preuve de bénéfice cardiovasculaire ou rénal, contrairement au dulaglutide et au liraglutide ; le profil de tolérance apparaît favorable mais avec des incertitudes à long terme.",
+      "population_cible_min": 213000,
+      "population_cible_max": 213000,
+      "population_cible_texte_brut": "Patients en échec d'un traitement par monothérapie correctement mené par la metformine : 23 300. Patients en échec d'un traitement par bithérapie correctement mené par metformine et sulfamide : 59 900. Patients non contrôlés par un traitement par insuline basale et antidiabétique oral : 129 800. La population cible est estimée à 213 000 patients.",
+      "population_cible_source_type": "les_deux",
+      "population_cible_commentaire_commission": null,
+      "avis_references": [
+        {
+          "medicament_nom": "VICTOZA",
+          "annee": "2015",
+          "contexte": "Cité pour l'estimation du nombre de patients en échec d'un traitement par monothérapie correctement mené par la metformine (23 300 patients)",
+          "canonical_id": "eval_placeholder_985125bf158c"
+        },
+        {
+          "medicament_nom": "OZEMPIC",
+          "annee": "2022",
+          "contexte": "Cité pour l'estimation du nombre de patients en échec d'un traitement par monothérapie correctement mené par la metformine (23 300 patients)",
+          "canonical_id": "eval_placeholder_6aa2d6210cf1"
+        }
+      ],
+      "arguments": [
+        {
+          "texte": "Efficacité démontrée du tirzépatide par rapport à des comparateurs actifs (sémaglutide, insuline glargine, insuline dégludec, insuline lispro) sur la variation d'HbA1c, uniquement en association avec la metformine, un sulfamide ou une insuline basale.",
+          "categorie": "efficacite",
+          "orientation": "favorable",
+          "type_argument": "superiorite_demontree",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Superiorite demontree sur le critere principal",
+          "canonical_id": "arg_0c63c3a10e727630"
+        },
+        {
+          "texte": "Perte de poids significativement supérieure avec le tirzépatide par rapport au sémaglutide et par rapport à une prise de poids observée sous insuline basale.",
+          "categorie": "efficacite",
+          "orientation": "favorable",
+          "type_argument": "superiorite_demontree",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Superiorite demontree sur le critere principal",
+          "canonical_id": "arg_0c63c3a10e727630"
+        },
+        {
+          "texte": "Profil de tolérance du tirzépatide qui apparaît favorable avec le recul limité des essais cliniques, caractérisé par des événements gastro-intestinaux, comme les analogues du GLP-1.",
+          "categorie": "securite",
+          "orientation": "favorable",
+          "type_argument": "profil_tolerance_favorable",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Profil de tolerance favorable",
+          "canonical_id": "arg_2070e16cd6fd6c54"
+        },
+        {
+          "texte": "Absence de démonstration d'un bénéfice du tirzépatide sur des critères de jugement cliniquement pertinents de morbi-mortalité, notamment cardiovasculaires (3P-MACE) ou rénaux.",
+          "categorie": "efficacite",
+          "orientation": "defavorable",
+          "type_argument": "absence_benefice_demontre",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence de benefice clinique demontre",
+          "canonical_id": "arg_954fb530e49f1688"
+        },
+        {
+          "texte": "Contrairement au dulaglutide et au liraglutide qui ont démontré une réduction du critère 3P-MACE (études REWIND et LEADER), on ne dispose d'aucune donnée démontrant un éventuel bénéfice cardiovasculaire de MOUNJARO.",
+          "categorie": "efficacite",
+          "orientation": "defavorable",
+          "type_argument": "absence_benefice_demontre",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence de benefice clinique demontre",
+          "canonical_id": "arg_954fb530e49f1688"
+        },
+        {
+          "texte": "Incertitudes sur la tolérance du tirzépatide au long terme, en lien notamment avec sa composante agoniste des récepteurs GIP et la non-inclusion dans les études des patients atteints de rétinopathie diabétique sévère.",
+          "categorie": "securite",
+          "orientation": "defavorable",
+          "type_argument": "donnees_securite_insuffisantes",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Donnees de securite insuffisantes / recul limite",
+          "canonical_id": "arg_9dff99cd54154b0d"
+        },
+        {
+          "texte": "Les études pivots étaient des études de non-infériorité réalisées en ouvert, ce qui représente un biais.",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "etude_ouverte_absence_aveugle",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Etude ouverte, absence d'aveugle",
+          "canonical_id": "arg_44218d9d8dce54f4"
+        },
+        {
+          "texte": "L'étude SURPASS-2 a comparé le tirzépatide au sémaglutide dosé à 1 mg, alors que le dosage de 2 mg (posologie maximale recommandée) a obtenu l'AMM postérieurement au lancement de l'étude.",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "comparateur_non_pertinent",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Comparateur juge non pertinent ou obsolete",
+          "canonical_id": "arg_d187d08f71e5da4d"
+        },
+        {
+          "texte": "La méta-analyse cardiovasculaire comporte des limites méthodologiques du fait de l'hétérogénéité des études incluses (risque cardiovasculaire de base, durée de traitement, doses).",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "risque_de_biais",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Risque de biais methodologique identifie",
+          "canonical_id": "arg_766814c1f6027a82"
+        },
+        {
+          "texte": "Les résultats sur les critères de qualité de vie dans les études cliniques sont uniquement exploratoires, aucune conclusion formelle ne peut en être tirée.",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "resultats_non_matures_ou_incertains",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Resultats non matures ou incertitude statistique residuelle",
+          "canonical_id": "arg_9788a13c4a2f9513"
+        },
+        {
+          "texte": "Le besoin médical dans le diabète de type 2 est déjà partiellement couvert par les gliflozines et par le dulaglutide et le liraglutide ayant démontré une réduction de la morbi-mortalité cardiovasculaire, sans réponse supplémentaire apportée par le tirzépatide.",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "defavorable",
+          "type_argument": "besoin_partiellement_couvert",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Besoin medical partiellement couvert",
+          "canonical_id": "arg_6b093835439f3c9b"
+        }
+      ],
+      "comparateurs": [
+        {
+          "comparateur": {
+            "canonical_id": "semaglutide",
+            "nom": "OZEMPIC",
+            "dci": "sémaglutide",
+            "type_molecule": "analogue du GLP-1"
+          },
+          "en_association_avec": "metformine",
+          "role": "comparateur actif de l'étude pivot SURPASS-2",
+          "endpoint_principal": "Variation de l'HbA1c à 40 semaines",
+          "endpoint_secondaires": [
+            "Variation du poids à 40 semaines",
+            "Proportion de patients atteignant HbA1c < 7%",
+            "Proportion de patients atteignant HbA1c < 5,7%"
+          ],
+          "resultat_principal": "Différence de la moyenne des moindres carrés vs sémaglutide 1mg : -0,23 (TZP 5mg), -0,51 (TZP 10mg), -0,60 (TZP 15mg) ; p<0,001 pour tous les dosages",
+          "resultat_secondaires": "Variation du poids : -7,8 kg (TZP 5mg), -10,3 kg (TZP 10mg), -12,4 kg (TZP 15mg) vs -6,2 kg (sémaglutide 1mg), p<0,001",
+          "evidence_excerpt": "Tirzépatide 5 mg, 10 mg et 15 mg ont démontré une non-infériorité puis une supériorité (p < 0,001 pour tous les dosages) par rapport au sémaglutide 1 mg, en termes de variation d'HbA1c après 40 semaines."
+        },
+        {
+          "comparateur": {
+            "canonical_id": "insuline_degludec",
+            "nom": "TRESIBA",
+            "dci": "insuline dégludec",
+            "type_molecule": "insuline basale"
+          },
+          "en_association_avec": "metformine ± iSGLT-2",
+          "role": "comparateur actif de l'étude pivot SURPASS-3",
+          "endpoint_principal": "Variation de l'HbA1c à 52 semaines",
+          "endpoint_secondaires": [
+            "Variation du poids à 52 semaines",
+            "Proportion de patients atteignant HbA1c < 7%"
+          ],
+          "resultat_principal": "Différence de la moyenne des moindres carrés vs insuline dégludec : -0,59 (TZP 5mg), -0,86 (TZP 10mg), -1,04 (TZP 15mg) ; p<0,001",
+          "resultat_secondaires": "Variation du poids : -7,5 kg (TZP 5mg), -10,7 kg (TZP 10mg), -12,9 kg (TZP 15mg) vs +2,3 kg (insuline dégludec), p<0,001",
+          "evidence_excerpt": "Tirzépatide 5 mg, 10 mg et 15 mg ont démontré une non-infériorité puis une supériorité (p < 0,001 pour tous les dosages) par rapport à l'insuline dégludec titrée, en termes de variation d'HbA1c après 52 semaines."
+        },
+        {
+          "comparateur": {
+            "canonical_id": "insuline_glargine",
+            "nom": "LANTUS",
+            "dci": "insuline glargine",
+            "type_molecule": "insuline basale"
+          },
+          "en_association_avec": "1 à 3 antidiabétiques oraux",
+          "role": "comparateur actif de l'étude pivot SURPASS-4",
+          "endpoint_principal": "Variation de l'HbA1c à 52 semaines",
+          "endpoint_secondaires": [
+            "Variation du poids à 52 semaines",
+            "Proportion de patients atteignant HbA1c < 7%"
+          ],
+          "resultat_principal": "Différence de la moyenne des moindres carrés vs insuline glargine : -0,80 (TZP 5mg), -0,99 (TZP 10mg), -1,14 (TZP 15mg) ; p<0,001",
+          "resultat_secondaires": "Variation du poids : -7,1 kg (TZP 5mg), -9,5 kg (TZP 10mg), -11,7 kg (TZP 15mg) vs +1,9 kg (insuline glargine), p<0,001",
+          "evidence_excerpt": "Tirzépatide 5 mg, 10 mg et 15 mg ont démontré une non-infériorité puis une supériorité (p < 0,001 pour tous les dosages) par rapport à l'insuline glargine, en termes de variation d'HbA1c après 52 semaines."
+        },
+        {
+          "comparateur": {
+            "canonical_id": "insuline_lispro",
+            "nom": "HUMALOG",
+            "dci": "insuline lispro",
+            "type_molecule": "insuline rapide"
+          },
+          "en_association_avec": "insuline glargine ± metformine",
+          "role": "comparateur actif de l'étude pivot SURPASS-6",
+          "endpoint_principal": "Variation de l'HbA1c à 52 semaines",
+          "endpoint_secondaires": [
+            "Variation du poids à 52 semaines",
+            "Proportion de patients atteignant HbA1c < 7%"
+          ],
+          "resultat_principal": "Diminution moyenne de l'HbA1c : 2,05 (TZP 5mg), 2,27 (TZP 10mg), 2,46 (TZP 15mg), 2,26 (tous dosages réunis) vs 1,16 (insuline lispro) ; supériorité p<0,001",
+          "resultat_secondaires": "Variation du poids : -6,9 kg (TZP 5mg), -9,9 kg (TZP 10mg), -12,0 kg (TZP 15mg), -9,6 kg (tous dosages réunis) vs +3,8 kg (insuline lispro)",
+          "evidence_excerpt": "Tirzépatide tous dosages réunis a démontré une non-infériorité par rapport à l'insuline lispro titrée... Les analyses secondaires ont démontré la non-infériorité puis la supériorité (p < 0,001) de tirzépatide, quelle que soit la dose."
+        }
+      ],
+      "canonical_id": "eval_68d0d1380e69"
+    },
+    {
+      "pathologie": {
+        "nom": "Diabète de type 2 insuffisamment contrôlé en complément d'un régime alimentaire et d'une activité physique, en monothérapie quand l'utilisation de la metformine est considérée comme inappropriée en raison d'une intolérance ou de contre-indications",
+        "icd10": "E11",
+        "categorie": "endocrinologie/diabétologie",
+        "severite": "Maladie chronique aux complications potentiellement graves, notamment cardiovasculaires",
+        "icd10_resolu_automatiquement": true,
+        "canonical_id": "e11"
+      },
+      "population": {
+        "profil_genetique": null,
+        "sous_groupe": "Adultes intolérants ou ayant une contre-indication à la metformine, traités en monothérapie",
+        "gravite": null,
+        "canonical_id": "pop_891a3aacbd28"
+      },
+      "smr_niveau": "Insuffisant",
+      "asmr_valeur": "NA",
+      "asmr_signification": "Sans objet, le SMR étant jugé insuffisant pour justifier d'une prise en charge par la solidarité nationale",
+      "date_avis": "2024-07-17",
+      "date_avis_precision": "jour",
+      "type_avis": "primo-inscription",
+      "ligne_traitement": "Monothérapie en cas d'intolérance ou de contre-indication à la metformine",
+      "justification": "En l'absence de donnée clinique pertinente en monothérapie (efficacité démontrée uniquement dans les associations avec metformine), la Commission considère que MOUNJARO n'a pas de place dans la stratégie thérapeutique dans cette situation et rend un avis défavorable au remboursement au regard des alternatives disponibles.",
+      "population_cible_min": null,
+      "population_cible_max": null,
+      "population_cible_texte_brut": null,
+      "population_cible_source_type": null,
+      "population_cible_commentaire_commission": null,
+      "avis_references": [],
+      "arguments": [
+        {
+          "texte": "En l'absence de donnée clinique pertinente, MOUNJARO n'a pas de place dans la stratégie thérapeutique en monothérapie quand l'utilisation de la metformine est considérée comme inappropriée ; son efficacité a été démontrée uniquement dans les associations avec la metformine.",
+          "categorie": "efficacite",
+          "orientation": "defavorable",
+          "type_argument": "absence_benefice_demontre",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence de benefice clinique demontre",
+          "canonical_id": "arg_954fb530e49f1688"
+        },
+        {
+          "texte": "SMR insuffisant pour justifier d'une prise en charge par la solidarité nationale au regard des alternatives disponibles dans cette situation de l'AMM.",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "defavorable",
+          "type_argument": "alternatives_disponibles",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Alternatives therapeutiques disponibles",
+          "canonical_id": "arg_476c558acfc45118"
+        }
+      ],
+      "comparateurs": [],
+      "canonical_id": "eval_740d9edfa53e"
+    }
+  ]
+}

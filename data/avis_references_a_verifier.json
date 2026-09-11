@@ -1,0 +1,20 @@
+[
+  {
+    "canonical_id": "eval_placeholder_985125bf158c",
+    "medicament_nom": "VICTOZA",
+    "annee": "2015",
+    "contexte": "Cité pour l'estimation du nombre de patients en échec d'un traitement par monothérapie correctement mené par la metformine (23 300 patients)",
+    "cite_par": [
+      "CT-20759_MOUNJARO_DT2_PIC_INS_AvisDef_CT20759"
+    ]
+  },
+  {
+    "canonical_id": "eval_placeholder_6aa2d6210cf1",
+    "medicament_nom": "OZEMPIC",
+    "annee": "2022",
+    "contexte": "Cité pour l'estimation du nombre de patients en échec d'un traitement par monothérapie correctement mené par la metformine (23 300 patients)",
+    "cite_par": [
+      "CT-20759_MOUNJARO_DT2_PIC_INS_AvisDef_CT20759"
+    ]
+  }
+]

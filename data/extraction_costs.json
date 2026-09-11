@@ -22,5 +22,45 @@
     "cost_usd": 0.1441,
     "model": "claude-sonnet-5",
     "ts": "2026-09-08T06:55:35"
+  },
+  {
+    "document_id": "ct031832_avastin",
+    "tokens_in": 23040,
+    "tokens_out": 4604,
+    "cost_usd": 0.09212,
+    "model": "claude-sonnet-5",
+    "ts": "2026-09-11T09:04:27"
+  },
+  {
+    "document_id": "camzyos_ap2_decision_et_avisct_ap251",
+    "tokens_in": 75884,
+    "tokens_out": 7236,
+    "cost_usd": 0.22413,
+    "model": "claude-sonnet-5",
+    "ts": "2026-09-11T09:07:59"
+  },
+  {
+    "document_id": "CT-16605_DUPIXENT_PIC_INS_avis3_CT16605",
+    "tokens_in": 79223,
+    "tokens_out": 6882,
+    "cost_usd": 0.22727,
+    "model": "claude-sonnet-5",
+    "ts": "2026-09-11T09:11:44"
+  },
+  {
+    "document_id": "camzyos_ap2_decision_et_avisct_ap251",
+    "tokens_in": 76079,
+    "tokens_out": 8466,
+    "cost_usd": 0.23682,
+    "model": "claude-sonnet-5",
+    "ts": "2026-09-11T09:15:17"
+  },
+  {
+    "document_id": "CT-20759_MOUNJARO_DT2_PIC_INS_AvisDef_CT20759",
+    "tokens_in": 107968,
+    "tokens_out": 10861,
+    "cost_usd": 0.32455,
+    "model": "claude-sonnet-5",
+    "ts": "2026-09-11T09:17:18"
   }
 ]

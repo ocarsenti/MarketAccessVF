@@ -34,5 +34,17 @@
     "documents": [
       "CT-18123_GLIVEC_PIS_INS_Avis2_CT18123"
     ]
+  },
+  {
+    "nom": "cardiomyopathie hypertrophique obstructive (CMHo) avec des symptômes (stade II-III de la classification NYHA) persistants sous traitement de fond de la CMHo",
+    "documents": [
+      "camzyos_ap2_decision_et_avisct_ap251"
+    ]
+  },
+  {
+    "nom": "Cardiomyopathie hypertrophique obstructive (CMHo)",
+    "documents": [
+      "camzyos_ap2_decision_et_avisct_ap251"
+    ]
   }
 ]

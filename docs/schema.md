@@ -11,7 +11,7 @@ SA/ASA) — projet séparé.
 | `Medicament` | DCI normalisée (`atezolizumab`) | `nom`, `dci`, `fabricant`, `type_molecule` |
 | `Pathologie` | ICD10 normalisé (`c34`) ou `pathologie_inconnue_<slug>` si non résolu | `nom`, `icd10`, `categorie`, `severite`, `icd10_resolu_automatiquement` |
 | `Comparateur` | DCI normalisée (même structure que `Medicament`) | `nom`, `dci`, `type_molecule` |
-| `Evaluation` | hash déterministe (voir ci-dessous) | `smr_niveau`, `asmr_valeur`, `asmr_signification`, `date_avis`, `date_avis_precision`, `type_avis`, `ligne_traitement`, `justification`, `document_id`, `titre` |
+| `Evaluation` | hash déterministe (voir ci-dessous) | `smr_niveau`, `asmr_valeur`, `asmr_signification`, `date_avis`, `date_avis_precision`, `type_avis`, `ligne_traitement`, `justification`, `document_id`, `titre`, `population_cible_min`, `population_cible_max`, `population_cible_texte_brut`, `population_cible_source_type`, `population_cible_commentaire_commission` |
 | `Population` | hash du contenu | `profil_genetique`, `sous_groupe`, `gravite` |
 | `Argument` | hash de (`categorie`, `orientation`, `type_argument`) | `categorie` ∈ {methodologie, efficacite, securite, besoin_medical_non_couvert, autre}, `orientation` ∈ {favorable, defavorable}, `type_argument` (taxonomie fermée, voir `utils/arguments_taxonomy.py`), `label` (libellé FR lisible du type) |
 
@@ -34,7 +34,43 @@ opposés — Important/IV vs Insuffisant/NA).
                           endpoint_secondaires, resultat_principal,
                           resultat_secondaires, evidence_excerpt}]->(Comparateur)
 (Evaluation)-[:SUCCEDE_A]->(Evaluation)   # même medicament + même pathologie, trié par date_avis croissante
+(Evaluation)-[:S_APPUIE_SUR {contexte: string}]->(Evaluation)   # cite un AUTRE avis HAS (médicament différent) comme source du calcul de population cible
 ```
+
+### Population cible
+
+La section "Population cible" d'un avis n'est pas systématique (absente par
+exemple sur les avis d'accès précoce post-AMM) — tous les champs
+`population_cible_*` restent `null` quand elle est absente, jamais inventés.
+Le chiffre peut être une valeur unique (`population_cible_min ==
+population_cible_max`) ou une fourchette issue d'une décomposition par
+sous-catégories. `population_cible_texte_brut` conserve le paragraphe
+verbatim pour ne rien perdre de ce que le LLM n'aurait pas structuré.
+`population_cible_commentaire_commission` n'est rempli que si la Commission
+exprime une vraie réserve sur son propre chiffre (ex: Dupixent —
+"probablement sous-estimé") — jamais pour un exposé neutre du calcul.
+
+`population_cible_source_type` ∈ {`etude_externe`, `avis_has_anterieur`,
+`les_deux`, `non_precise`}. Quand la source inclut un ou plusieurs autres
+avis HAS (ex: Mounjaro citant Victoza 2015 et Ozempic 2022), chaque
+référence devient une relation `S_APPUIE_SUR` — distincte de `SUCCEDE_A`,
+qui capture la trajectoire dans le temps d'un même médicament, alors que
+`S_APPUIE_SUR` relie deux `Evaluation` de médicaments différents.
+
+Si l'avis référencé n'est pas encore dans le graphe au moment de
+l'extraction, un nœud `Evaluation` **placeholder** est créé
+(`canonical_id` déterminé uniquement par `medicament_nom` + `annee`, voir
+`utils/avis_references.py` — préfixe `eval_placeholder_`, jamais en
+collision avec le `canonical_id` d'une vraie `Evaluation`), marqué
+`est_placeholder: true`. Chaque référence est aussi loggée dans
+`data/avis_references_a_verifier.json` pour réconciliation manuelle
+ultérieure avec la vraie `Evaluation` une fois celle-ci extraite — même
+mécanisme que `data/pathologies_a_verifier.json` /
+`data/arguments_a_verifier.json`. Cette réconciliation n'est pas
+automatique : le placeholder garde son propre `canonical_id` même après
+extraction de l'avis réel, qui reçoit son `canonical_id` normal
+(`evaluation_canonical_id`, dérivé de médicament/pathologie/population/
+document/date).
 
 `document_id` et `titre` (propriété `ISSUE_DE_DOCUMENT` de la proposition
 initiale) sont restés des **propriétés de `Evaluation`**, pas une relation

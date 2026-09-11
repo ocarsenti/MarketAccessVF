@@ -1,0 +1,182 @@
+{
+  "document_info": {
+    "titre": "DUPIXENT 300 mg, solution injectable en seringue pré-remplie - dupilumab",
+    "type_document": "avis de la commission de la transparence",
+    "document_id": "CT-16605_DUPIXENT_PIC_INS_avis3_CT16605",
+    "source_pdf": "CT-16605_DUPIXENT_PIC_INS_avis3_CT16605.pdf"
+  },
+  "medicament": {
+    "canonical_id": "dupilumab",
+    "nom": "DUPIXENT",
+    "dci": "dupilumab",
+    "fabricant": "Sanofi Aventis France",
+    "type_molecule": "anticorps monoclonal"
+  },
+  "evaluations": [
+    {
+      "pathologie": {
+        "nom": "Dermatite atopique modérée à sévère de l'adulte nécessitant un traitement systémique, en cas d'échec, d'intolérance ou de contre-indication à la ciclosporine",
+        "icd10": "L20",
+        "categorie": "dermatologie",
+        "severite": "modérée à sévère",
+        "icd10_resolu_automatiquement": true,
+        "canonical_id": "l20"
+      },
+      "population": {
+        "profil_genetique": null,
+        "sous_groupe": "Adultes en échec, intolérance ou contre-indication à la ciclosporine",
+        "gravite": "dermatite atopique modérée à sévère avec fort retentissement sur la qualité de vie",
+        "canonical_id": "pop_724e999254b8"
+      },
+      "smr_niveau": "Important",
+      "asmr_valeur": "III",
+      "asmr_signification": "Supériorité démontrée versus placebo sur la réduction des symptômes (EASI-75) et l'amélioration de la qualité de vie, avec une quantité d'effet importante et cliniquement pertinente, malgré des incertitudes sur la tolérance à long terme, dans un contexte de besoin médical non couvert.",
+      "date_avis": "2018-07-11",
+      "date_avis_precision": "jour",
+      "type_avis": "primo-inscription",
+      "ligne_traitement": "Traitement systémique de seconde intention, après échec/intolérance/contre-indication à la ciclosporine",
+      "justification": "DUPIXENT présente un rapport efficacité/effets indésirables important chez les adultes atteints de DA modérée à sévère en échec, intolérance ou contre-indication à la ciclosporine, population pour laquelle il n'existe pas d'alternative thérapeutique validée. Le SMR est jugé important et l'ASMR III est reconnue compte tenu de la supériorité démontrée versus placebo et du besoin médical non couvert, malgré les incertitudes sur la tolérance à long terme.",
+      "population_cible_min": 24000,
+      "population_cible_max": 38000,
+      "population_cible_texte_brut": "Une étude observationnelle transversale (EPI AWARE) a été réalisée par le laboratoire en 2016 chez les adulte atteints de DA dans plusieurs pays, notamment en France (n = 9 964). Elle a permis d'estimer la prévalence de la DA chez l'adulte à 3,6 %. Cette estimation est cohérente avec les données de la littérature estimant la prévalence de la DA en Europe entre 2 et 5 % de la population adulte. Après extrapolation à la population adulte française, le nombre de patients adultes atteints de DA peut être estimé en France à 1,89 millions en 2017. Dans une seconde étude transversale réalisée par le laboratoire (Global AWARE) chez 764 patients atteints de DA vus en consultation par des médecins généralistes, dermatologues ou allergologues exerçant en ville ou à l'hôpital, le pourcentage des formes modérées et sévères a été estimé à 43 % (35,7 % de formes modérées et 7,2 % de formes sévères) selon le score IGA et 52 % (40,2 % de formes modérées et 12,5 % de formes sévères) selon le SCORAD, soit une population de patients atteints de DA modérée à sévère de l'ordre de 812 000 patients à 996 000 patients. Parmi ces patients, 37,4 % ayant une forme sévère et 5,9 % ayant une forme modérée ont reçu un traitement systémique dans les 12 mois précédant l'étude, soit une population de 90 702 patients à 133 185 patients. Le pourcentage de patients ayant arrêté leur traitement systémique au cours des 12 mois précédant l'étude a été de 0,8 % pour les formes modérées et 13,4 % pour les formes sévères, soit une population de 24 000 patients à 38 000 patients.",
+      "population_cible_source_type": "etude_externe",
+      "population_cible_commentaire_commission": "La Commission souligne que cette population est très certainement sous-estimée, le traitement par ciclosporine étant limité dans le temps (environ 1 an) en raison de sa mauvaise tolérance, et qu'à terme une majorité de patients nécessitant un traitement systémique pourrait être traitée par DUPIXENT.",
+      "avis_references": [],
+      "arguments": [
+        {
+          "texte": "Démonstration de la supériorité de DUPIXENT par rapport au placebo en termes de réduction des symptômes (pourcentage de répondeurs EASI-75 après 16 semaines) avec une quantité d'effet supplémentaire importante et cliniquement pertinente",
+          "categorie": "efficacite",
+          "orientation": "favorable",
+          "type_argument": "superiorite_demontree",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Superiorite demontree sur le critere principal",
+          "canonical_id": "arg_0c63c3a10e727630"
+        },
+        {
+          "texte": "Démonstration de l'amélioration de la qualité de vie observée après 16 semaines de traitement par rapport au placebo",
+          "categorie": "efficacite",
+          "orientation": "favorable",
+          "type_argument": "superiorite_demontree",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Superiorite demontree sur le critere principal",
+          "canonical_id": "arg_0c63c3a10e727630"
+        },
+        {
+          "texte": "Besoin médical non couvert chez les adultes atteints de DA modérée à sévère nécessitant un traitement systémique en cas d'échec, d'intolérance ou de contre-indication à la ciclosporine, sans alternative validée",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "favorable",
+          "type_argument": "absence_alternative_therapeutique",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence d'alternative therapeutique",
+          "canonical_id": "arg_7a9d6b7e4fcbcc7c"
+        },
+        {
+          "texte": "Incertitudes sur le profil de tolérance à long terme de DUPIXENT et sur le maintien de son efficacité au-delà de 52 semaines, en l'absence de données à plus long terme à la posologie de l'AMM",
+          "categorie": "securite",
+          "orientation": "defavorable",
+          "type_argument": "donnees_securite_insuffisantes",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Donnees de securite insuffisantes / recul limite",
+          "canonical_id": "arg_9dff99cd54154b0d"
+        },
+        {
+          "texte": "Dans cette sous-population, DUPIXENT n'a pas de comparateur cliniquement pertinent validé",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "comparateur_non_pertinent",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Comparateur juge non pertinent ou obsolete",
+          "canonical_id": "arg_d187d08f71e5da4d"
+        }
+      ],
+      "comparateurs": [],
+      "canonical_id": "eval_0d3ece4518e3"
+    },
+    {
+      "pathologie": {
+        "nom": "Dermatite atopique modérée à sévère de l'adulte en échec des traitements topiques et naïfs de traitements systémiques",
+        "icd10": "L20",
+        "categorie": "dermatologie",
+        "severite": "modérée à sévère",
+        "icd10_resolu_automatiquement": true,
+        "canonical_id": "l20"
+      },
+      "population": {
+        "profil_genetique": null,
+        "sous_groupe": "Adultes en échec des traitements topiques, naïfs de tout traitement systémique",
+        "gravite": "dermatite atopique modérée à sévère",
+        "canonical_id": "pop_4acd5ca68e0c"
+      },
+      "smr_niveau": "Insuffisant",
+      "asmr_valeur": "NA",
+      "asmr_signification": null,
+      "date_avis": "2018-07-11",
+      "date_avis_precision": "jour",
+      "type_avis": "primo-inscription",
+      "ligne_traitement": "Première intention de traitement systémique après échec des traitements topiques",
+      "justification": "En l'absence de données comparatives robustes versus ciclosporine par voie orale, seul médicament ayant l'AMM en première intention et alternative disponible, le SMR de DUPIXENT est jugé insuffisant pour justifier une prise en charge par la solidarité nationale chez les adultes naïfs de traitement systémique.",
+      "population_cible_min": null,
+      "population_cible_max": null,
+      "population_cible_texte_brut": null,
+      "population_cible_source_type": null,
+      "population_cible_commentaire_commission": null,
+      "avis_references": [],
+      "arguments": [
+        {
+          "texte": "Absence de données comparatives robustes versus ciclosporine par voie orale chez les adultes en échec des traitements topiques et naïfs de traitements systémiques",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "absence_comparateur_direct",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence de comparaison directe avec le traitement de reference",
+          "canonical_id": "arg_a80413f9cb8ca2ba"
+        },
+        {
+          "texte": "En l'absence de comparaison directe du dupilumab à la ciclosporine, alors que cette comparaison était réalisable, la place du dupilumab par rapport à la ciclosporine orale après échec des traitements topiques ne peut être établie",
+          "categorie": "methodologie",
+          "orientation": "defavorable",
+          "type_argument": "absence_comparateur_direct",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Absence de comparaison directe avec le traitement de reference",
+          "canonical_id": "arg_a80413f9cb8ca2ba"
+        },
+        {
+          "texte": "Il existe des alternatives thérapeutiques validées (ciclosporine, seul médicament ayant l'AMM) dans la prise en charge des patients naïfs de traitement systémique",
+          "categorie": "besoin_medical_non_couvert",
+          "orientation": "defavorable",
+          "type_argument": "alternatives_disponibles",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Alternatives therapeutiques disponibles",
+          "canonical_id": "arg_476c558acfc45118"
+        },
+        {
+          "texte": "Le rapport efficacité/effets indésirables est non établi chez les patients adultes atteints de DA modérée à sévère en échec des traitements topiques et naïfs de ciclosporine",
+          "categorie": "efficacite",
+          "orientation": "defavorable",
+          "type_argument": "effet_taille_incertain",
+          "type_argument_resolu_automatiquement": true,
+          "label": "Incertitude sur la taille de l'effet",
+          "canonical_id": "arg_bcf14a3275146100"
+        }
+      ],
+      "comparateurs": [
+        {
+          "comparateur": {
+            "canonical_id": "ciclosporine",
+            "nom": "SANDIMMUN / NEORAL",
+            "dci": "ciclosporine",
+            "type_molecule": "immunosuppresseur"
+          },
+          "en_association_avec": null,
+          "role": "Comparateur cliniquement pertinent, seul traitement ayant l'AMM en première intention, non comparé directement au dupilumab",
+          "endpoint_principal": null,
+          "endpoint_secondaires": [],
+          "resultat_principal": null,
+          "resultat_secondaires": null,
+          "evidence_excerpt": "Les médicaments recommandés chez les patients atteints de DA modérée à sévère chez qui un traitement systémique est nécessaire sont représentés par les médicaments à base de ciclosporine principalement, les seuls ayant l'AMM dans la prise en charge de la DA."
+        }
+      ],
+      "canonical_id": "eval_dfb5683fcb9f"
+    }
+  ]
+}
